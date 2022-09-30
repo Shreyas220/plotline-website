@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Plotline</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+    <body>
+        <div class="container">
+            <div class="main">
+                <form id="form" >
+                    <br>
+                <label style="color: white;">Origin Address</label>
+                <br>
+                <input id="Origin" Origin="Origin" placeholder="Origin" type="text">
+               <br>
+                <label style="color: white;">Destination Address</label> <br>
+                <input id="destination" name="Destination" placeholder=" Destination" type="text">
+                <br>
+                <input type="submit" value="Submit" >
+            </form>
+            </div>
+            <br>
+            <div id="output"></div>
+        </div>
+        <br>
+        <div id="map"></div>
+
+        <script src="script.js"></script>
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNYxu7FcuVSYRaRZxumdf1JnyvvTa9F38&libraries=places&callback=initMap&v=weekly"
+        ></script>
+    </body>
+</html>

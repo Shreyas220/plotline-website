@@ -1,0 +1,75 @@
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 10px;
+  border-radius: 30px;
+}
+
+
+
+ 
+  html, body {
+    height: 70%;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.5;
+    background-color: rgb(224, 231, 250);
+    padding: 0 2rem;
+
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
+  input[type=text], select, textarea {
+    width: 98%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid rgb(236, 171, 171); /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  .container {
+    border-radius: 20px;
+    background-color: rgb(34, 31, 31);
+    padding: 20px;
+    margin-left:center;
+    margin-right:center;
+  
+  }
+
+  .resultcontainer{
+    border-radius: 20px;
+    background-color: rgb(20, 209, 83);
+    padding: 10px;
+    margin-left:center;
+    margin-right:center;
+  
+  }
+
+  .noresultcontainer{
+    border-radius: 20px;
+    background-color: rgb(209, 42, 20);
+    padding: 10px;
+    margin-left:center;
+    margin-right:center;
+  
+  }
+
+
