@@ -76,6 +76,7 @@ async function calcAndDisplayAPI(directionsDisplay,mapRequest){
         method: 'POST',
         header: new Headers({
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://goserver.gpejavf3ccgpf0c6.eastasia.azurecontainer.io:8080/",
           }),
           mode: "cors",
         body: JSON.stringify({
