@@ -72,8 +72,12 @@ async function calcAndDisplayRoute(directionsService, directionsDisplay, mapRequ
 
 //function to get disrance and duration from api 
 async function calcAndDisplayAPI(directionsDisplay,mapRequest){
-    await fetch("https://20.6.145.33:8080/getdirection", {
+    await fetch("https://goserver.gpejavf3ccgpf0c6.eastasia.azurecontainer.io:8080/getdirection", {
         method: 'POST',
+        header: new Headers({
+            "Content-Type": "application/json",
+          }),
+          mode: "cors",
         body: JSON.stringify({
             'origin': mapRequest.origin,
             'destination': mapRequest.destination
