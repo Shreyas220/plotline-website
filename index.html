@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Plotline</title>
+<title>Shreyas Plotline Task</title>
 <link rel="stylesheet" href="style.css" />
 </head>
     <body>
+        <h1 style="text-align: center">Find the driving distance between the two location</h1>
         <div class="container">
             <div class="main">
                 <form id="form" >
                     <br>
-                <label style="color: white;">Origin Address</label>
-                <br>
-                <input id="Origin" Origin="Origin" placeholder="Origin" type="text">
-               <br>
-                <label style="color: white;">Destination Address</label> <br>
-                <input id="destination" name="Destination" placeholder=" Destination" type="text">
-                <br>
-                <input type="submit" value="Submit" >
+                    <label style="color: white;">Origin Address</label>
+                    <br>
+                    <input id="Origin" Origin="Origin" placeholder="Origin" type="text">
+                    <br>
+                    <label style="color: white;">Destination Address</label> <br>
+                    <input id="destination" name="Destination" placeholder=" Destination" type="text">
+                    <br>
+                    <input id="1" type="submit" value="Submit" >
+                    <br><br>
+                 </form>
+            <form  id="api">
+                <p style="color:bisque">The below button will make a call to the backend (deployed on azure) to fetch only distance and duration </p>
+                <input  type="submit" value="Submit API" >
             </form>
-            </div>
+        </div>
             <br>
             <div id="output"></div>
         </div>
