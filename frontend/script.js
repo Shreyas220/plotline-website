@@ -1,4 +1,6 @@
 const form = document.getElementById("form");
+const con = document.getElementById("api");
+
 const origin = document.getElementById("Origin");
 const destination = document.getElementById("destination");
 
@@ -24,11 +26,25 @@ function initMap() {
         calcAndDisplayRoute(directionsService, directionsDisplay, mapRequest);
       };
 
+    var onSubmitapi = function(e) {
+        console.log("inside")
+        var mapRequest = {
+            origin: origin.value,
+            destination: destination.value,
+            travelMode: 'DRIVING'
+        };
+        
+        e.preventDefault();
+        calcAndDisplayAPI(directionsDisplay,mapRequest);
+      };
+
+
     var options = {
         types: ['(cities)']
     }
     var autocomplete1 = new google.maps.places.Autocomplete(origin, options);
     var autocomplete2 = new google.maps.places.Autocomplete(destination, options);
+    con.addEventListener("submit", onSubmitapi); 
     form.addEventListener("submit", onSubmit)
     
 
@@ -51,6 +67,31 @@ async function calcAndDisplayRoute(directionsService, directionsDisplay, mapRequ
             //show error message
             output.innerHTML = ` <div class="noresultcontainer" style="color:white";> Could not retrieve driving distance.</div> `;
         }
+    });
+}
+
+//function to get disrance and duration from api 
+function calcAndDisplayAPI(directionsDisplay,mapRequest){
+     fetch("https://plotline-task-production.up.railway.app/getdirection", {
+        method: 'POST',
+        body: JSON.stringify({
+            'origin': mapRequest.origin,
+            'destination': mapRequest.destination
+        })
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        directionsDisplay.setDirections({ routes: [] });
+        console.log(data)
+        output.innerHTML = `<div class="resultcontainer" >Driving distance: `+ data.distance + ".<br />Duration: " + data.duration + ".</div>";
+
+    })
+    .catch(errResData => {
+        directionsDisplay.setDirections({ routes: [] });
+        console.log(errResData)
+        output.innerHTML = ` <div class="noresultcontainer" style="color:white";> Could not retrieve driving distance.</div> `;
     });
 }
 
